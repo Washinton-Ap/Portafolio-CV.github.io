@@ -1,0 +1,332 @@
+/* ===== REINICIO BÁSICO ===== */
+/* Quita los márgenes y padding que el navegador pone por defecto */
+/* Hace que el tamaño de las cajas incluya el borde y padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ===== ESTILOS DEL BODY ===== */
+/* Cambia la fuente de toda la página a Arial */
+/* Establece el espaciado entre líneas de texto */
+/* Define el color del texto principal */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #1e3a5f;
+}
+
+/* ===== ENCABEZADO PRINCIPAL ===== */
+/* Crea un fondo azul con degradado de oscuro a claro */
+/* Cambia el color del texto a blanco */
+/* Centra todo el contenido */
+/* Agrega espacio interno arriba/abajo 40px y a los lados 20px */
+.encabezado {
+    background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+/* ===== FOTO DE PERFIL ===== */
+/* Define el ancho y alto de la imagen en 150 píxeles */
+/* Hace la imagen circular con border-radius 50% */
+/* Agrega un borde blanco de 5 píxeles alrededor */
+/* Deja espacio de 20px debajo de la imagen */
+/* Ajusta la imagen para que llene el espacio sin deformarse */
+.foto-perfil {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 5px solid white;
+    margin-bottom: 20px;
+    object-fit: cover;
+}
+
+/* ===== TÍTULO PRINCIPAL (H1) ===== */
+/* Cambia el tamaño de la letra a 2.2rem (aproximadamente 35px) */
+/* Agrega espacio de 10px debajo del título */
+.encabezado h1 {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+}
+
+/* ===== SUBTÍTULO DEL ENCABEZADO ===== */
+/* Cambia el tamaño de la letra a 1.2rem */
+/* Cambia el color a azul claro */
+.encabezado p {
+    font-size: 1.2rem;
+    color: #dbeafe;
+}
+
+/* ===== MENÚ DE NAVEGACIÓN ===== */
+/* Pone un fondo azul oscuro */
+/* Usa flexbox para organizar los enlaces en fila */
+/* Centra los enlaces horizontalmente */
+/* Permite que los enlaces bajen a otra línea si no caben */
+.menu {
+    background-color: #1e40af;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* ===== ENLACES DEL MENÚ ===== */
+/* Cambia el color del texto a blanco */
+/* Quita el subrayado de los enlaces */
+/* Agrega espacio interno de 15px arriba/abajo y 25px a los lados */
+/* Hace que cada enlace sea un bloque para ocupar todo su espacio */
+.menu a {
+    color: white;
+    text-decoration: none;
+    padding: 15px 25px;
+    display: block;
+}
+
+/* ===== EFECTO HOVER EN ENLACES DEL MENÚ ===== */
+/* Cambia el fondo a azul más claro cuando pasas el mouse */
+.menu a:hover {
+    background-color: #2563eb;
+}
+
+/* ===== CONTENEDOR DE SECCIONES ===== */
+/* Limita el ancho máximo a 900 píxeles */
+/* Centra la sección horizontalmente */
+/* Agrega espacio interno de 40px arriba/abajo y 20px a los lados */
+.seccion {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* ===== FONDO GRIS ALTERNADO ===== */
+/* Pone un fondo azul muy claro para alternar secciones */
+.fondo-gris {
+    background-color: #eff6ff;
+}
+
+/* ===== TÍTULOS DE SECCIÓN (H2) ===== */
+/* Cambia el color a azul oscuro */
+/* Establece el tamaño de letra a 1.8rem */
+/* Agrega espacio de 25px debajo */
+/* Pone una línea azul de 3px debajo del título */
+/* Agrega espacio de 10px entre el texto y la línea */
+.seccion h2 {
+    color: #1e3a8a;
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+    border-bottom: 3px solid #3b82f6;
+    padding-bottom: 10px;
+}
+
+/* ===== PÁRRAFOS DENTRO DE SECCIONES ===== */
+/* Agrega espacio de 15px debajo de cada párrafo */
+/* Justifica el texto para que quede alineado a ambos lados */
+/* Cambia el color del texto a gris oscuro */
+.seccion p {
+    margin-bottom: 15px;
+    text-align: justify;
+    color: #334155;
+}
+
+/* ===== SLIDER DE TECNOLOGÍAS ===== */
+/* Crea un contenedor que oculta lo que se sale de sus límites */
+/* Agrega espacio de 30px arriba y abajo */
+.slider {
+    overflow: hidden;
+    padding: 30px 0;
+}
+
+/* ===== CONTENEDOR DE SLIDES ===== */
+/* Usa flexbox para organizar las imágenes en fila */
+/* Centra las imágenes verticalmente */
+/* Agrega espacio de 40px entre cada imagen */
+/* Activa la animación de desplazamiento infinito */
+/* La animación dura 20 segundos y se repite infinitamente */
+.slider-contenedor {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    animation: deslizar 20s linear infinite;
+}
+
+/* ===== ANIMACIÓN DE DESLIZAMIENTO ===== */
+/* Mueve el contenedor hacia la izquierda */
+/* Al llegar al 100% se desplaza -50% para crear efecto infinito */
+@keyframes deslizar {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* ===== CADA SLIDE (IMAGEN DE TECNOLOGÍA) ===== */
+/* Evita que las imágenes se encojan */
+/* Centra el contenido (imagen y texto) */
+/* Ancho mínimo de 120 píxeles */
+.slide {
+    flex-shrink: 0;
+    text-align: center;
+    min-width: 120px;
+}
+
+/* ===== IMÁGENES DENTRO DEL SLIDER ===== */
+/* Establece el ancho de cada logo en 100 píxeles */
+/* Establece la altura en 100 píxeles */
+/* Mantiene la proporción de la imagen */
+/* Agrega espacio de 10px debajo */
+.slide img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+/* ===== TEXTO DEBAJO DE CADA LOGO ===== */
+/* Cambia el color a azul oscuro */
+/* Hace el texto en negrita */
+/* Reduce el tamaño de letra a 0.9rem */
+.slide p {
+    color: #1e40af;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+/* ===== CAJA DE HABILIDAD ===== */
+/* Pone fondo blanco */
+/* Agrega espacio interno de 20px */
+/* Deja espacio de 20px debajo de cada caja */
+/* Pone una línea azul de 4px a la izquierda */
+.habilidad {
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-left: 4px solid #3b82f6;
+}
+
+/* ===== TÍTULO DE HABILIDAD (H3) ===== */
+/* Cambia el color a azul oscuro */
+/* Agrega espacio de 10px debajo */
+/* Establece el tamaño de letra a 1.2rem */
+.habilidad h3 {
+    color: #1e40af;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+/* ===== LISTA DE HABILIDADES ===== */
+/* Quita las viñetas (puntos) de la lista */
+/* Elimina el espacio a la izquierda */
+.habilidad ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+/* ===== ELEMENTOS DE LA LISTA ===== */
+/* Agrega espacio de 5px arriba y abajo de cada elemento */
+/* Cambia el color del texto a gris */
+.habilidad li {
+    padding: 5px 0;
+    color: #475569;
+}
+
+/* ===== CAJA DE PROYECTO ===== */
+/* Pone fondo blanco */
+/* Agrega espacio interno de 20px */
+/* Deja espacio de 20px debajo */
+/* Pone un borde gris claro de 1px */
+/* Pone una línea azul de 5px a la izquierda */
+.proyecto {
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #bfdbfe;
+    border-left: 5px solid #60a5fa;
+}
+
+/* ===== TÍTULO DE PROYECTO (H3) ===== */
+/* Cambia el color a azul oscuro */
+/* Agrega espacio de 8px debajo */
+/* Establece el tamaño de letra a 1.3rem */
+.proyecto h3 {
+    color: #1e3a8a;
+    margin-bottom: 8px;
+    font-size: 1.3rem;
+}
+
+/* ===== TECNOLOGÍAS DEL PROYECTO ===== */
+/* Cambia el color a azul medio */
+/* Hace el texto en negrita */
+/* Agrega espacio de 10px debajo */
+/* Reduce el tamaño de letra a 0.95rem */
+.tecnologia {
+    color: #2563eb;
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+}
+
+/* ===== PÁRRAFOS EN CONTACTO ===== */
+/* Agrega espacio de 12px debajo */
+/* Aumenta el tamaño de letra a 1.05rem */
+#contacto p {
+    margin-bottom: 12px;
+    font-size: 1.05rem;
+}
+
+/* ===== ETIQUETAS STRONG EN CONTACTO ===== */
+/* Cambia el color a azul oscuro */
+#contacto strong {
+    color: #1e40af;
+}
+
+/* ===== PIE DE PÁGINA ===== */
+/* Pone fondo azul oscuro */
+/* Cambia el texto a blanco */
+/* Centra el texto */
+/* Agrega espacio interno de 20px */
+footer {
+    background-color: #1e3a8a;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* ===== RESPONSIVE PARA MÓVILES ===== */
+/* Estos estilos solo se aplican en pantallas menores a 768px */
+@media (max-width: 768px) {
+    /* Reduce el tamaño de la foto a 120px */
+    .foto-perfil {
+        width: 120px;
+        height: 120px;
+    }
+
+    /* Reduce el tamaño del título a 1.6rem */
+    .encabezado h1 {
+        font-size: 1.6rem;
+    }
+
+    /* Coloca los enlaces del menú en columna vertical */
+    .menu {
+        flex-direction: column;
+    }
+
+    /* Centra los enlaces del menú */
+    .menu a {
+        text-align: center;
+    }
+
+    /* Reduce el tamaño de los títulos de sección */
+    .seccion h2 {
+        font-size: 1.5rem;
+    }
+
+    /* Reduce el tamaño de los logos en celulares */
+    .slide img {
+        width: 80px;
+        height: 80px;
+    }
+}
